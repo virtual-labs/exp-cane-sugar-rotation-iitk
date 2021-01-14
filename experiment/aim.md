@@ -1,1 +1,1 @@
-### Aim of the experiment
+To measure the specific rotation of cane sugar using Polarimeter
