@@ -1,13 +1,419 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<!-- Add CSS at the head of HTML file -->
-    <link rel="stylesheet" href="./css/main.css">
-</head>
-<body>
-		<!-- Your code goes here-->
+	<head>
+		<title>Specific Rotation of PPL</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	  	<script src="js/graph.ob.js"></script>
+   		<script type="text/javascript" src="js/graph_line_use.ob.js"></script>
+   		<script type="text/javascript" src="js/script.js"></script>
+   		<style type="text/css">
+   			#myCanvas{
+   				background:url("image/back1.svg");
+				background-repeat: no-repeat;
+				  
+			  	background-position: fixed;
+			  	background-position: 0px 0px;
+			  	background-size:cover;
+   			}
+   		</style>
+	</head>
+	<body >
+		<div class="container" style="background-color: #c7dcff">
+			<div class="row">
+				<div class="col-md-12" style="background: #9ac0fc; font-size: 30px;text-align: center;color: black;"><b>Specific Rotation of Plane Polarized Light</b></div>
 
-	<!-- Add JS at the bottom of HTML file --> 
-        <script src="./js/main.js"></script>
-</body>
+				<div class="col-md-4" style="margin-top:20px;border: 5px black solid; background: #dde9af;">
+					<div class="row">
+						<div class="col-md-12" style="border-bottom: 2px solid black">
+							<form style="color:black;">
+								<br>
+								Concentration of Solution (C)<br> <input type="text" placeholder=" in g/cc" id="Con">&nbsp&nbsp&nbsp&nbsp
+								<input class="btn-success" type="submit" value="Submit" onclick="Concentration()">
+								<br><br>
+							</form>
+						</div>
+						<div class="col-md-7" style="border-right: 2px solid black">
+							<form style="color:black;">
+								Input Angle (&theta;)<br> <input type="text" placeholder=" in Degree" id="theta"><br><br>
+								Length of the tube (L)<br> <input type="text" placeholder=" in cm" id="Len"><br><br>
+								
+								<input class="btn-success" type="submit" value="Check" onclick="calculate()">&nbsp&nbsp&nbsp&nbsp
+								<input class="btn-danger" type="submit" value="Reset" onclick="window.reload();"> <br><br>
+								<!-- Sepecific Rotation (S) <input type="text" id="Spe" > -->
+							</form>
+						</div>
+						<div class="col-md-5" id="Message" style="display:none;" >
+							<div class="col-md-12" style="text-align: center;color: white;background: #001370;">Message</div>
+							<b id="Message2" style="color: red;">
+							<!-- Concentration of the Solution for this Experiment is -<input id="Message1" type="text" name="" size="13"> -->
+							</b>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-md-8">
+					<center>
+						<br>
+						<canvas id="myCanvas" width="740" height="270" style="border:3px solid red;">
+
+						</canvas>
+
+
+						<!-- <button onclick="startScrolling()">Start Scrolling!</button> -->
+						<!-- <script type="text/javascript">
+							var M1;
+							var M2;
+							var M3;
+							var M4;
+							var a1;
+							var a2;
+							var D;
+							draw();
+							function Concentration(){
+								
+								event.preventDefault();
+								window.M3=document.getElementById("Con").value;
+								if(M3==""){
+									alert("Please fill the Concentration of the soilution.");
+								}else{		
+								document.getElementById("Message").style="show";						
+								document.getElementById("Message2").innerHTML = "Concentration of the Solution for this Experiment is - "+M3+" g/cc.";
+								}
+							}
+							function calculate() {
+								event.preventDefault();
+								if(M3==""){
+									alert("Please fill the Concentration of the soilution first.")
+								}
+								else{
+							    	M1 = document.getElementById("theta").value;
+									M2 = document.getElementById("Len").value;
+									M3 = document.getElementById("Con").value;
+									if(M1==""||M2==""){
+										alert("Please fill the length and input angle both");
+									}
+									else{
+									alert(M3);
+									M4 = (10*M1)/(M2*M3);
+							  		//document.getElementById("Spe").value = M4;
+							  		alert(M1);
+							  		alert(M4);
+							  		a1=M1;
+									a2=M4;
+									D=M2;
+									draw();
+									}
+							  	}
+							}
+
+							function draw(){
+								var c = document.getElementById("myCanvas");
+								var ctx = c.getContext("2d");
+								
+								var rx = 280 + 90 - D/2;
+								ctx.clearRect(0,0,740,300);
+								// ctx.font = "20px Arial";
+								// ctx.fillStyle="black";
+								// ctx.fillText("S=10\u{03B8} / LC", 10, 20);
+								// ctx.font = "15px Arial";
+								// ctx.fillText("\u{03B8} = Rotation produced in degree.", 10, 35);
+								// ctx.fillText("L = Length of the tube in centimeter.", 10, 50);
+								// ctx.fillText("C = Consentration of Sugar soilution in g/cc.", 10, 65);
+
+								ctx.beginPath();
+								ctx.save();
+								ctx.lineWidth = 3;
+								ctx.strokeStyle = "red";
+								ctx.moveTo(20, 150);
+								ctx.lineTo(720, 150);
+								ctx.stroke();
+								ctx.restore();
+
+								ctx.beginPath();
+								ctx.lineWidth = 5;
+								ctx.strokeRect(rx, 60, D,180);
+								ctx.strokeStyle = "black";
+								ctx.fillStyle = "#fff9c2";
+								ctx.fillRect(rx, 60, D,180);
+								ctx.stroke();
+								ctx.restore();
+								ctx.save();
+
+								ctx.beginPath();
+								ctx.lineWidth = 5;
+								ctx.strokeStyle = "Green";
+								ctx.translate(50,150);
+								ctx.rotate((Math.PI/180)*(90-a1));
+								ctx.moveTo(0, -50);
+								ctx.lineTo(0, 50);
+								ctx.stroke();
+								ctx.restore();
+								ctx.save();
+
+								ctx.beginPath();
+								ctx.lineWidth = 2;
+								ctx.strokeStyle = "blue";
+								ctx.setLineDash([5, 5]);
+								ctx.translate(50,150);
+								ctx.rotate((Math.PI/180)*(0));
+								ctx.moveTo(0, -50);
+								ctx.lineTo(0, 50);
+								ctx.stroke();
+								ctx.restore();
+								ctx.save();
+
+								ctx.beginPath();
+								ctx.lineWidth = 5;
+								ctx.strokeStyle = "Green";
+								ctx.translate(100,150);
+								ctx.rotate((Math.PI/180)*(90-a1));
+								ctx.moveTo(0, -50);
+								ctx.lineTo(0, 50);
+								ctx.stroke();
+								ctx.restore();
+								ctx.save();
+
+								ctx.beginPath();
+								ctx.lineWidth = 2;
+								ctx.strokeStyle = "blue";
+								ctx.setLineDash([5, 5]);
+								ctx.translate(100,150);
+								ctx.rotate((Math.PI/180)*(0));
+								ctx.moveTo(0, -50);
+								ctx.lineTo(0, 50);
+								ctx.stroke();
+								ctx.restore();
+								ctx.save();
+								
+
+								ctx.beginPath();
+								ctx.lineWidth = 5;
+								ctx.strokeStyle = "Green";
+								ctx.translate(150,150);
+								ctx.rotate((Math.PI/180)*(90-a1));
+								ctx.moveTo(0, -50);
+								ctx.lineTo(0, 50);
+								ctx.stroke();
+								ctx.restore();
+								ctx.save();	
+
+								ctx.beginPath();
+								ctx.lineWidth = 2;
+								ctx.strokeStyle = "blue";
+								ctx.setLineDash([5, 5]);
+								ctx.translate(150,150);
+								ctx.rotate((Math.PI/180)*(0));
+								ctx.moveTo(0, -50);
+								ctx.lineTo(0, 50);
+								ctx.stroke();
+								ctx.restore();
+								ctx.save();
+
+								ctx.beginPath();
+								ctx.lineWidth = 5;
+								ctx.strokeStyle = "Green";
+								ctx.translate(200,150);
+								ctx.rotate((Math.PI/180)*(90-a1));
+								ctx.moveTo(0, -50);
+								ctx.lineTo(0, 50);
+								ctx.stroke();
+								ctx.restore();
+								ctx.save();
+
+								ctx.beginPath();
+								ctx.lineWidth = 2;
+								ctx.strokeStyle = "blue";
+								ctx.setLineDash([5, 5]);
+								ctx.translate(200,150);
+								ctx.rotate((Math.PI/180)*(0));
+								ctx.moveTo(0, -50);
+								ctx.lineTo(0, 50);
+								ctx.stroke();
+								ctx.restore();
+								ctx.save();
+
+								ctx.beginPath();
+								ctx.lineWidth = 5;
+								ctx.strokeStyle = "Green";
+								ctx.translate(540,150);
+								ctx.rotate((Math.PI/180)*(90-a2));
+								ctx.moveTo(0, -50);
+								ctx.lineTo(0, 50);
+								ctx.stroke();
+								ctx.restore();
+								ctx.save();
+
+								ctx.beginPath();
+								ctx.lineWidth = 2;
+								ctx.strokeStyle = "blue";
+								ctx.setLineDash([5, 5]);
+								ctx.translate(540,150);
+								ctx.rotate((Math.PI/180)*(0));
+								ctx.moveTo(0, -50);
+								ctx.lineTo(0, 50);
+								ctx.stroke();
+								ctx.restore();
+								ctx.save();
+
+								ctx.beginPath();
+								ctx.lineWidth = 5;
+								ctx.strokeStyle = "Green";
+								ctx.translate(590,150);
+								ctx.rotate((Math.PI/180)*(90-a2));
+								ctx.moveTo(0, -50);
+								ctx.lineTo(0, 50);
+								ctx.stroke();
+								ctx.restore();
+								ctx.save();
+
+								ctx.beginPath();
+								ctx.lineWidth = 2;
+								ctx.strokeStyle = "blue";
+								ctx.setLineDash([5, 5]);
+								ctx.translate(590,150);
+								ctx.rotate((Math.PI/180)*(0));
+								ctx.moveTo(0, -50);
+								ctx.lineTo(0, 50);
+								ctx.stroke();
+								ctx.restore();
+								ctx.save();
+
+								ctx.beginPath();
+								ctx.lineWidth = 5;
+								ctx.strokeStyle = "Green";
+								ctx.translate(640,150);
+								ctx.rotate((Math.PI/180)*(90-a2));
+								ctx.moveTo(0, -50);
+								ctx.lineTo(0, 50);
+								ctx.stroke();
+								ctx.restore();
+								ctx.save();
+
+								ctx.beginPath();
+								ctx.lineWidth = 2;
+								ctx.strokeStyle = "blue";
+								ctx.setLineDash([5, 5]);
+								ctx.translate(640,150);
+								ctx.rotate((Math.PI/180)*(0));
+								ctx.moveTo(0, -50);
+								ctx.lineTo(0, 50);
+								ctx.stroke();
+								ctx.restore();
+								ctx.save();
+
+								ctx.beginPath();
+								ctx.lineWidth = 5;
+								ctx.strokeStyle = "Green";
+								ctx.translate(690,150);
+								ctx.rotate((Math.PI/180)*(90-a2));
+								ctx.moveTo(0, -50);
+								ctx.lineTo(0, 50);
+								ctx.stroke();
+								ctx.restore();
+								ctx.save();
+
+								ctx.beginPath();
+								ctx.lineWidth = 2;
+								ctx.strokeStyle = "blue";
+								ctx.setLineDash([5, 5]);
+								ctx.translate(690,150);
+								ctx.rotate((Math.PI/180)*(0));
+								ctx.moveTo(0, -50);
+								ctx.lineTo(0, 50);
+								ctx.stroke();
+								ctx.restore();
+								ctx.save();
+							}
+										
+
+
+							 window.onload=function () {
+							 	createTable();
+							 }
+							// function refreshPage(){
+							//     window.location.reload();
+							//} 
+							function drawGraph() {
+    
+								    var datapoints1 = [];
+								    for (let i = 1; i <= 5; i++) {
+								        var tx = document.getElementById("d"+i+"1").firstChild.value;
+								        var ty = document.getElementById("d"+i+"2").firstChild.value;
+								        datapoints1.push({ x: parseInt(tx), y: parseInt(ty) });
+								        graphline("l1", datapoints1, " '\U+03B8';(in Degree)", "L (c)");
+								    }
+								}
+
+
+								function createTable() {
+								    var str = "<h3 class='text-center'></h3>"; 
+								    str += "<table>";
+								    str += "<tr><th>Sr No.</th><th class= 'text-center'>Input Angle<br>(&theta;)</th><th class='text-center'>Length of Tube<br>(L)</th></tr>";
+								    var table = document.getElementById("dataTable");
+								    for (i = 1; i <= 5; i++) {
+								        str += '<tr><td>' + i + '.</td><td id = "d' + i + '1"><input type="text"></td><td id = "d' + i + '2"><input type="text"></td></tr>';
+								    }
+								    str += "</table>";
+								    table.innerHTML = str;
+								}
+								function slope(){
+									var xm = document.getElementById("X").value;
+									var ym = document.getElementById("Y").value;
+									var mm = ym/xm;
+									document.getElementById("slope").value = mm;
+									var sm = mm*10;
+									document.getElementById("specific_rota").value = sm;
+								}
+						</script> -->
+					</center>
+				</div>
+				<br>
+				<div class="col-md-12" style="background: #9ac0fc;color: black;text-align: center;margin-top:10px; ">
+			     <h4>TABLE : OBSERVATIONS</h4>
+			        
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-5">
+					<div id="dataTable"></div>
+					<br>
+					<center>
+						<button class="btn-success" onclick="drawGraph()">Draw Graph</button>
+						<br>
+					</center>
+				</div>
+				<div class="col-md-4" style="border-right: 2px solid black;border-left:2px solid black;">
+					<div id="l1" style="height: 230px; width: 350px;"></div>
+				</div>
+				<div class="col-md-3" style="background: #dde9af;color: black;">
+					<br>
+					Enter Points (&Delta;X, &Delta;Y)
+					<br>
+					&Delta; X <input type="text" id="X" maxlength="4" size="4">&nbsp&nbsp&nbsp&nbsp
+					&Delta; Y <input type="text" id="Y" maxlength="4" size="4">&nbsp&nbsp&nbsp&nbsp
+					<input class="btn-success" type="submit" value="Submit" onclick="slope();">
+					<br>
+					<br>
+					Slpoe
+					<br>
+					<input type="text" id="slope">
+					<br>
+					<br>
+					Specific Rotation (S)
+					<br>
+					<input type="text" id="specific_rota">
+					<br>
+					<br>
+				</div>
+			</div>
+			
+			
+			
+			
+		</div>
+
+		
+	</body>
 </html>
