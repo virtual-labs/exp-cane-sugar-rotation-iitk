@@ -92,11 +92,10 @@
     {
       question: "If the length of the polarimeter tube is 10 cm and the concentration of the sugar solution is 10% then at room temperature (25 <sup>0</sup> C) the specific rotation of the plane polarized light will be:",  ///// Write the question inside double quotes
       answers: {
-        a: "56.5 deg cm -1 (gm/cc) -1",                  ///// Write the option 1 inside double quotes
-        b: "66.5 deg cm -1 (gm/cc) -1",                  ///// Write the option 2 inside double quotes
-        c: "76.5 deg cm -1 (gm/cc) -1",                  ///// Write the option 3 inside double quotes
-        d: "86.5 deg cm -1 (gm/cc) -1"                   ///// Write the option 4 inside double quotes
-      },
+         a: "56.5 deg cm <sup>-1</sup> (gm/cc)<sup> -1</sup>",                  ///// Write the option 1 inside double quotes
+        b: "66.5 deg cm <sup> -1</sup> (gm/cc) <sup> -1</sup>",                  ///// Write the option 2 inside double quotes
+        c: "76.5 deg cm <sup> -1</sup> (gm/cc) <sup> -1</sup>",                  ///// Write the option 3 inside double quotes
+        d: "86.5 deg cm <sup> -1</sup> (gm/cc) <sup> -1</sup>"      },
       correctAnswer: "b"                ///// Write the correct option inside double quotes
     },
 
