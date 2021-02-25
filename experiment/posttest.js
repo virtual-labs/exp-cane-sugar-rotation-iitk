@@ -90,7 +90,7 @@
 
   const myQuestions = [
     {
-      question: "If the length of the polarimeter tube is 10 cm and the concentration of the sugar solution is 10% then at room temperature (25 0 C) the specific rotation of the plane polarized light will be:",  ///// Write the question inside double quotes
+      question: "If the length of the polarimeter tube is 10 cm and the concentration of the sugar solution is 10% then at room temperature (25 <sup>0</sup> C) the specific rotation of the plane polarized light will be:",  ///// Write the question inside double quotes
       answers: {
         a: "56.5 deg cm -1 (gm/cc) -1",                  ///// Write the option 1 inside double quotes
         b: "66.5 deg cm -1 (gm/cc) -1",                  ///// Write the option 2 inside double quotes
