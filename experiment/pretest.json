@@ -16,4 +16,23 @@
 		"d": "None of these"
 	},
 	"correctAnswer": "a"
+},
+{
+	"question": "Specific rotation of any solution depends on:",
+	"answers": {
+		"a": "Concentration",
+		"b": "Length of the tube",
+		"c": "Temperature",
+		"d": "None of these"
+	},
+	"correctAnswer": "c"
+},{
+	"question": "If the length of tube is increased then the specific rotation of any solution:",
+	"answers": {
+		"a": "Increases",
+		"b": "Decreases",
+		"c": "Remains unchanged",
+		"d": "None of these"
+	},
+	"correctAnswer": "c"
 }]

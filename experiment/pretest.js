@@ -109,7 +109,25 @@
         d: "None of these"                   ///// Write the option 4 inside double quotes
       },
       correctAnswer: "a"                ///// Write the correct option inside double quotes
-    },                                  ///// To add more questions, copy the section below 
+    },  {
+     question: "Specific rotation of any solution depends on:",  ///// Write the question inside double quotes
+      answers: {
+        a: "Concentration",                  ///// Write the option 1 inside double quotes
+        b: "Length of the tube",                  ///// Write the option 2 inside double quotes
+        c: "Temperature",                  ///// Write the option 3 inside double quotes
+        d: "None of these"                   ///// Write the option 4 inside double quotes
+      },
+      correctAnswer: "c"                ///// Write the correct option inside double quotes
+    },{
+     question: "If the length of tube is increased then the specific rotation of any solution:",  ///// Write the question inside double quotes
+      answers: {
+        a: "Increases",                  ///// Write the option 1 inside double quotes
+        b: "Decreases",                  ///// Write the option 2 inside double quotes
+        c: "Remains unchanged",                  ///// Write the option 3 inside double quotes
+        d: "None of these"                   ///// Write the option 4 inside double quotes
+      },
+      correctAnswer: "c"                ///// Write the correct option inside double quotes
+    },                                ///// To add more questions, copy the section below 
     									                  ///// this line
 
 

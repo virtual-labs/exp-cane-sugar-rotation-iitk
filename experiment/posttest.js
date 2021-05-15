@@ -109,7 +109,25 @@
         d: "None of these"                    ///// Write the option 4 inside double quotes
       },
       correctAnswer: "b"                ///// Write the correct option inside double quotes
-    },                                  ///// To add more questions, copy the section below 
+    },   {
+      question: "Concentration of the sugar solution in the experiment should be between:",  ///// Write the question inside double quotes
+      answers: {
+        a: "0 g/cc – 4 g/cc",                  ///// Write the option 1 inside double quotes
+        b: "5 g/cc – 20 g/cc",                  ///// Write the option 2 inside double quotes
+        c: "50 g/cc – 200 g/cc",                  ///// Write the option 3 inside double quotes
+        d: "None of these"                    ///// Write the option 4 inside double quotes
+      },
+      correctAnswer: "b"                ///// Write the correct option inside double quotes
+    }, {
+      question: "Length of the tube in the experiment should be between:",  ///// Write the question inside double quotes
+      answers: {
+        a: "0 cm – 20 cm",                  ///// Write the option 1 inside double quotes
+        b: "100 cm – 200 cm",                  ///// Write the option 2 inside double quotes
+        c: "1000 cm – 2000 cm",                  ///// Write the option 3 inside double quotes
+        d: "None of these"                    ///// Write the option 4 inside double quotes
+      },
+      correctAnswer: "a"                ///// Write the correct option inside double quotes
+    },                                ///// To add more questions, copy the section below 
     									                  ///// this line
 
 
