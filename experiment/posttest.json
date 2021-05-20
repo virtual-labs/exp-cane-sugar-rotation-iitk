@@ -16,16 +16,16 @@
 		"d": "None of these"
 	},
 	"correctAnswer": "b"
-},{
+}, {
 	"question": "Concentration of the sugar solution in the experiment should be between:",
 	"answers": {
 		"a": "0 g/cc – 4 g/cc",
 		"b": "5 g/cc – 20 g/cc",
-		"c": "50 g/cc – 200 g/cc	",
+		"c": "50 g/cc – 200 g/cc",
 		"d": "None of these"
 	},
 	"correctAnswer": "b"
-},{
+}, {
 	"question": "Length of the tube in the experiment should be between:",
 	"answers": {
 		"a": "0 cm – 20 cm",
@@ -35,6 +35,3 @@
 	},
 	"correctAnswer": "a"
 }]
-
-
- 
