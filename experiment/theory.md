@@ -8,5 +8,3 @@ Where,    θ = rotation produced in degrees. (0<sup>0</sup> – 180<sup>0</sup>)
                 C = concentration of sugar solution in g/cc. (5 g/cc – 20 g/cc)<br><br>
    Graphically S can be determined as<br><br>
    <img src="images/fig7a.PNG"><br>
-
-
