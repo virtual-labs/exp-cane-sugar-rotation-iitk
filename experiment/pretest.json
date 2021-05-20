@@ -1,0 +1,38 @@
+[{
+	"question": "The principle on which the Specific rotation of the plane polarized light experiment is based is:",
+	"answers": {
+		"a": "plane polarized light divides in to two components on passing through optically active medium",
+		"b": "Plane polarized light rotates when it passes through optically active medium",
+		"c": "Plane polarized light gets deviated when it passes through water",
+		"d": "None of these"
+	},
+	"correctAnswer": "b"
+}, {
+	"question": "On increasing the concentration of the sugar solution the angle of rotation of the plane polarized light:",
+	"answers": {
+		"a": "Increases",
+		"b": "Decreases",
+		"c": "Remains unchanged",
+		"d": "None of these"
+	},
+	"correctAnswer": "a"
+},
+{
+	"question": "Specific rotation of any solution depends on:",
+	"answers": {
+		"a": "Concentration",
+		"b": "Length of the tube",
+		"c": "Temperature",
+		"d": "None of these"
+	},
+	"correctAnswer": "c"
+},{
+	"question": "If the length of tube is increased then the specific rotation of any solution:",
+	"answers": {
+		"a": "Increases",
+		"b": "Decreases",
+		"c": "Remains unchanged",
+		"d": "None of these"
+	},
+	"correctAnswer": "c"
+}]
