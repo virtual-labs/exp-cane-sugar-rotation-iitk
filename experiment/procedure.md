@@ -9,3 +9,4 @@
 9.	Enter the value of ΔX and ΔY press “submit” button.<br>
 10.	Slope of the graph and specific rotation will be calculated.<br>
 11.	Repeat the experiment by changing the concentration of Sugar Solution.<br>
+
